@@ -31,6 +31,7 @@ Let's assume that the counter is of 8 bits, i.e. it can count from 0-255. Now if
 At 128 it will output 0, so the duty cycle we get is [(127/256)*100], which comes out to be 49.6%, roughly 50% duty cycle.
 
 ### **pwm_basic Implementation**
+<img width="1582" height="770" alt="image" src="https://github.com/user-attachments/assets/64910165-a75c-42b3-86c9-e5abfc71993e" />
 
 
 
