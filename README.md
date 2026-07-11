@@ -23,6 +23,13 @@ The **Average Voltage** that we get is d*Vcc.
 If R = 8bits, the minimum incremental step is 1/256, so the possible values are 0%, 0.39%, 0.78%,.....99.6%,100%. [At multiples of 1/256]
 * **Switching Frequency** - Frequency of the PWM Wave is f<sub>PWM</sub> = 1/t<sub>PWM</sub>
 
+### **The Architecture Of pwm_basic**
+<img width="932" height="328" alt="image" src="https://github.com/user-attachments/assets/00327899-4fb6-46c2-8e1e-25ea818cc8f4" />
+
+
+
+
+
 
 
 
