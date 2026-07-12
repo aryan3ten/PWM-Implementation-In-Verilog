@@ -46,10 +46,20 @@ In this simulation, I used 64 as the input d to the dut (desgin under test) via 
 A very important thing to keep in mind which I missed initially (which led to a lot of brain racking) is to adjust the simulation time according to the clock you are providing. In my case, I am used a 25Mhz clock, which is a 40ns time period clock. My counter counts upto 256. For every count, it takes 40ns (1 clock edge), so for 256, it will take (256*40 = 10,240ns). So keep in mind that to see your waveform, the simulation time needs to be atleast (R<sub>BITS</sub>*T<sub>CLK</sub>).
 
 ### **Revisting The Mathematics Of PWM**
+* **PWM Time Period** - 256*40ns = 10,240ns or 10.24us
+* **PWM Switching Frequency** - 1/10.24us = 97.65Khz
+So basically the switching frequency of our system is capped out by the system clock. But what if we want to use if for an application that demands a slower switching frequency. So for that we modify a design to add in a timer according to which the up-counter counts.
+So now, in the new PWM period, we multiply one more term, that is (Timer Final Value + 1).
+So now the new switching frequency becomes 1/(2<sup>R</sup>*(T<sub>sys</sub>*(Timer Final Value + 1)))
+Subsequently, if we know the frequency we want to operate in, we can set the timer final value accordingly, which comes out to be --> [1/(2<sup>R</sup>*(T<sub>sys</sub>*f<sub>pwm</sub>] - 1
 
 ### **The Architecture Of pwm_enhanced**
+<img width="987" height="532" alt="image" src="https://github.com/user-attachments/assets/fd5f0002-6b1a-4ed1-8bb1-1232f1765d47" />
+In this architecture, we can observe that now, the up counter counts on the ticks of the timer, whenever the timer is done couting. Also, at the output of the comparator, we have added in a D Flip Flop. The reason for that is to avoid glitches in the counter's transition to reach the output. 
+For example, if the counter's output changes from 01111111 -> 10000000, all the bits don't change simultaneously which causes tiny glitches to appear. So adding a D Flip Flop smoothens the output as the DFF only samples at the clock edge.
 
 ### **pwm_enhanced Implementation**
+
 
 ### **pwm_enhanced Schematic**
 <img width="1533" height="413" alt="image" src="https://github.com/user-attachments/assets/c0b2c64f-cde2-4ed9-8eea-2d034b6f293b" />
