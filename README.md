@@ -45,6 +45,18 @@ In this simulation, I used 64 as the input d to the dut (desgin under test) via 
 
 A very important thing to keep in mind which I missed initially (which led to a lot of brain racking) is to adjust the simulation time according to the clock you are providing. In my case, I am used a 25Mhz clock, which is a 40ns time period clock. My counter counts upto 256. For every count, it takes 40ns (1 clock edge), so for 256, it will take (256*40 = 10,240ns). So keep in mind that to see your waveform, the simulation time needs to be atleast (R<sub>BITS</sub>*T<sub>CLK</sub>).
 
+### **Revisting The Mathematics Of PWM**
+
+### **The Architecture Of pwm_enhanced**
+
+### **pwm_enhanced Implementation**
+
+### **pwm_enhanced Schematic**
+<img width="1533" height="413" alt="image" src="https://github.com/user-attachments/assets/c0b2c64f-cde2-4ed9-8eea-2d034b6f293b" />
+
+
+### **pwm_enhanced Simulation & Analysis**
+
 
 
 
