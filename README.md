@@ -67,6 +67,8 @@ For example, if the counter's output changes from 01111111 -> 10000000, all the 
 
 
 ### **pwm_enhanced Simulation & Analysis**
+<img width="1547" height="467" alt="image" src="https://github.com/user-attachments/assets/c1df48be-eecd-4e58-9e71-d83b51224f32" />
+
 
 
 
