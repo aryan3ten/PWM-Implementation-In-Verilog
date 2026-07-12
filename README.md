@@ -55,6 +55,7 @@ Subsequently, if we know the frequency we want to operate in, we can set the tim
 
 ### **The Architecture Of pwm_enhanced**
 <img width="987" height="532" alt="image" src="https://github.com/user-attachments/assets/fd5f0002-6b1a-4ed1-8bb1-1232f1765d47" />
+
 In this architecture, we can observe that now, the up counter counts on the ticks of the timer, whenever the timer is done couting. Also, at the output of the comparator, we have added in a D Flip Flop. The reason for that is to avoid glitches in the counter's transition to reach the output. 
 For example, if the counter's output changes from 01111111 -> 10000000, all the bits don't change simultaneously which causes tiny glitches to appear. So adding a D Flip Flop smoothens the output as the DFF only samples at the clock edge.
 
