@@ -2,7 +2,7 @@ module pwm_basic
 #(parameter BITS=8)(  
       input clk,
       input reset_n,
-      input [BITS-1:0] d,
+      input [BITS:0] d,
       output reg Q
       );
       
